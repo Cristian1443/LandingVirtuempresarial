@@ -3,252 +3,752 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Home - El futuro es virtual | [Tu Institución]</title>
+    <title>Home - El futuro es virtual | Universidad Virtual</title>
     
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TPCQTQ7N');</script>
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            overflow: hidden;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 48px;
+            background: white;
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Value Proposition */
+        .value-section {
+            padding: 100px 5%;
+            background: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: 100px 5%;
+            background: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-header {
+            height: 220px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .program-card:nth-child(1) .program-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .program-card:nth-child(2) .program-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .program-card:nth-child(3) .program-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .program-card:nth-child(4) .program-header {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .program-body {
+            padding: 30px;
+        }
+
+        .program-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .program-body h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+
+        .program-body p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .program-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .program-link:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 100px 5%;
+            background: #f8f9fa;
+        }
+
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPCQTQ7N"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- HEADER -->
+    <!-- Header/Navbar -->
     <header class="navbar">
-        <div class="navbar-left">
-            <a href="index.html">
-                <img src="src/LOGOUE.png" alt="Uniempresarial" class="logo-ue">
-            </a>
-        </div>
-
-        <!-- Botón hamburguesa -->
-        <button class="navbar-toggle" id="navbar-toggle" aria-expanded="false" aria-label="Abrir menú">
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-            <span class="bar" aria-hidden="true"></span>
-        </button>
-
-        <nav class="navbar-menu" id="navbar-menu" role="navigation" aria-label="Menú principal">
-            <ul>
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">Universidad Virtual</a>
+            </div>
+            <ul id="navbar-menu" class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Programas Virtuales <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="ingsoftware.html">Ingeniería de Software</a></li>
+                        <li><a href="ingsoftware.html">Software</a></li>
                         <li><a href="Marketing.html">Marketing</a></li>
-                        <li><a href="administracion.html">Administración de Empresas</a></li>
+                        <li><a href="administracion.html">Administración</a></li>
                     </ul>
                 </li>
                 <li><a href="espAnaliticaDatos.html">Posgrado de Analítica de Datos</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
-
-        <div class="navbar-right">
-            <a href="#contacto" class="btn-inscribete">Inscríbete</a>
-        </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero-home" id="inicio">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="hero-content-home">
-            <h1 class="hero-title">Tu Próximo Nivel es <span>Virtual</span></h1>
-            <p class="hero-subtitle">Educación Flexible con el Mejor Diseño UX y Modelo Dual</p>
-            <p class="hero-description">
-                Estudia desde cualquier lugar con programas 100% virtuales respaldados por la 
-                <strong>Cámara de Comercio de Bogotá</strong>. Metodología centrada en el usuario y 
-                tecnología inmersiva para tu éxito profesional.
-            </p>
-            <div class="hero-cta">
-                <a href="#programas" class="btn btn-primary">Explora Programas</a>
-                <a href="#contacto" class="btn btn-outline">Contáctanos</a>
-            </div>
-        </div>
-        <!-- Placeholder para imagen/video de fondo -->
-        <div class="hero-background">
-            <!-- Se puede agregar una imagen o video aquí -->
+        <div class="hero-content">
+            <h1>Educación Virtual de Excelencia</h1>
+            <p>Formación profesional flexible con metodología centrada en el estudiante y tecnología de vanguardia</p>
+            <a href="#programs" class="cta-button">Explorar Programas</a>
         </div>
     </section>
 
-    <!-- SECCIÓN DE VALOR -->
-    <section class="section valor-section">
-        <h2 class="elegir">¿Por qué estudiar virtualmente con nosotros?</h2>
-        <div class="divider"></div>
-        
-        <div class="cards">
-            <div class="card">
-                <div class="icon"><i class="fas fa-user-graduate"></i></div>
-                <h3>Metodología Centrada en el Usuario</h3>
-                <p>Plataforma intuitiva diseñada para maximizar tu aprendizaje y experiencia educativa.</p>
-            </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>Tecnología Inmersiva</h3>
-                <p>Herramientas digitales de última generación y recursos interactivos para tu formación.</p>
-            </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-clock"></i></div>
+    <!-- Value Proposition -->
+    <section class="value-section">
+        <div class="section-header fade-in">
+            <h2>¿Por qué Elegir Educación Virtual?</h2>
+            <p>Una experiencia educativa diseñada para profesionales que buscan flexibilidad sin comprometer la calidad</p>
+        </div>
+        <div class="value-grid">
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
                 <h3>Flexibilidad Total</h3>
-                <p>Estudia a tu ritmo, cuando quieras y desde donde estés, sin sacrificar calidad.</p>
+                <p>Estudia a tu ritmo, desde cualquier lugar. Compatibiliza tu formación con tu vida profesional y personal.</p>
             </div>
-            <div class="card">
-                <div class="icon"><i class="fas fa-briefcase"></i></div>
-                <h3>Modelo Dual Único</h3>
-                <p>50% clases + 50% práctica en empresas aliadas. Gradúate con experiencia laboral certificada.</p>
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Metodología Centrada en el Usuario</h3>
+                <p>Diseño instruccional enfocado en tu aprendizaje con recursos interactivos y acompañamiento personalizado.</p>
+            </div>
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Tecnología Inmersiva</h3>
+                <p>Plataforma de última generación con herramientas colaborativas, simuladores y entornos virtuales de aprendizaje.</p>
+            </div>
+            <div class="value-card fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Certificación Reconocida</h3>
+                <p>Títulos con validez oficial y reconocimiento nacional e internacional para impulsar tu carrera profesional.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROGRAMAS DESTACADOS -->
-    <section class="section programas-section" id="programas">
-        <h2 class="elegir">Nuestros Programas Virtuales</h2>
-        <p>Formación profesional de alto nivel con proyección internacional</p>
-        <div class="divider"></div>
-
-        <div class="programas-grid">
-            <!-- Programa 1: Ingeniería de Software -->
-            <div class="programa-card">
-                <div class="programa-icon">
+    <!-- Programs Section -->
+    <section id="programs" class="programs-section">
+        <div class="section-header fade-in">
+            <h2>Nuestros Programas</h2>
+            <p>Programas académicos diseñados para los desafíos del mundo digital</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card fade-in">
+                <div class="program-header">
                     <i class="fas fa-code"></i>
                 </div>
-                <h3>Ingeniería de Software</h3>
-                <p>Desarrolla soluciones tecnológicas innovadoras con las herramientas más demandadas del mercado.</p>
-                <ul class="programa-highlights">
-                    <li><i class="fas fa-check"></i> Desarrollo Full Stack</li>
-                    <li><i class="fas fa-check"></i> Inteligencia Artificial</li>
-                    <li><i class="fas fa-check"></i> Cloud Computing</li>
-                </ul>
-                <a href="ingsoftware.html" class="btn-programa">Ver Programa <i class="fas fa-arrow-right"></i></a>
+                <div class="program-body">
+                    <span class="program-badge">Pregrado Virtual</span>
+                    <h3>Ingeniería de Software</h3>
+                    <p>Forma profesionales capaces de diseñar, desarrollar e implementar soluciones tecnológicas innovadoras.</p>
+                    <a href="ingsoftware.html" class="program-link">Ver programa <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-
-            <!-- Programa 2: Marketing -->
-            <div class="programa-card">
-                <div class="programa-icon">
+            <div class="program-card fade-in">
+                <div class="program-header">
                     <i class="fas fa-bullhorn"></i>
                 </div>
-                <h3>Marketing</h3>
-                <p>Domina las estrategias digitales y lidera la transformación de marcas en el entorno virtual.</p>
-                <ul class="programa-highlights">
-                    <li><i class="fas fa-check"></i> Marketing Digital</li>
-                    <li><i class="fas fa-check"></i> E-commerce</li>
-                    <li><i class="fas fa-check"></i> Analítica de Datos</li>
-                </ul>
-                <a href="Marketing.html" class="btn-programa">Ver Programa <i class="fas fa-arrow-right"></i></a>
+                <div class="program-body">
+                    <span class="program-badge">Pregrado Virtual</span>
+                    <h3>Marketing Digital</h3>
+                    <p>Especialízate en estrategias digitales, análisis de mercado y gestión de marcas en entornos digitales.</p>
+                    <a href="Marketing.html" class="program-link">Ver programa <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-
-            <!-- Programa 3: Administración -->
-            <div class="programa-card">
-                <div class="programa-icon">
+            <div class="program-card fade-in">
+                <div class="program-header">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Administración de Empresas</h3>
-                <p>Lidera organizaciones con visión estratégica y habilidades gerenciales del siglo XXI.</p>
-                <ul class="programa-highlights">
-                    <li><i class="fas fa-check"></i> Estrategia Empresarial</li>
-                    <li><i class="fas fa-check"></i> Finanzas</li>
-                    <li><i class="fas fa-check"></i> Emprendimiento</li>
-                </ul>
-                <a href="administracion.html" class="btn-programa">Ver Programa <i class="fas fa-arrow-right"></i></a>
+                <div class="program-body">
+                    <span class="program-badge">Pregrado Virtual</span>
+                    <h3>Administración de Empresas</h3>
+                    <p>Desarrolla competencias gerenciales y estratégicas para liderar organizaciones en la era digital.</p>
+                    <a href="administracion.html" class="program-link">Ver programa <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
-
-            <!-- Programa 4: Posgrado Analítica -->
-            <div class="programa-card destacado">
-                <div class="badge-destacado">Posgrado</div>
-                <div class="programa-icon">
+            <div class="program-card fade-in">
+                <div class="program-header">
                     <i class="fas fa-database"></i>
                 </div>
-                <h3>Especialización en Analítica de Datos</h3>
-                <p>Conviértete en experto en ciencia de datos y toma de decisiones basadas en información.</p>
-                <ul class="programa-highlights">
-                    <li><i class="fas fa-check"></i> Big Data</li>
-                    <li><i class="fas fa-check"></i> Machine Learning</li>
-                    <li><i class="fas fa-check"></i> Business Intelligence</li>
-                </ul>
-                <a href="espAnaliticaDatos.html" class="btn-programa">Ver Programa <i class="fas fa-arrow-right"></i></a>
+                <div class="program-body">
+                    <span class="program-badge">Posgrado Virtual</span>
+                    <h3>Especialización en Analítica de Datos</h3>
+                    <p>Domina técnicas avanzadas de análisis de datos, machine learning y visualización para la toma de decisiones.</p>
+                    <a href="espAnaliticaDatos.html" class="program-link">Ver programa <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE CONTACTO -->
-    <section class="section contacto-section" id="contacto">
-        <div class="contacto-container">
-            <div class="contacto-info">
-                <h2>¿Listo para comenzar?</h2>
-                <p>Inscripciones abiertas 2025-2. Cupos limitados.</p>
-                <div class="contacto-details">
-                    <div class="contacto-item">
-                        <i class="fas fa-phone"></i>
-                        <span>(601) 794 57 18 Ext. 7705 - 7706 - 7707</span>
+    <!-- Statistics -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <h3 class="counter" data-target="15000">0</h3>
+                <p>Estudiantes Activos</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3 class="counter" data-target="98">0</h3>
+                <p>% Satisfacción</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3 class="counter" data-target="250">0</h3>
+                <p>Docentes Expertos</p>
+            </div>
+            <div class="stat-item fade-in">
+                <h3 class="counter" data-target="20">0</h3>
+                <p>Años de Experiencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-header fade-in">
+            <h2>Lo Que Dicen Nuestros Estudiantes</h2>
+            <p>Experiencias reales de profesionales que transformaron su carrera</p>
+        </div>
+        <div class="testimonial-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"La modalidad virtual me permitió estudiar mientras trabajaba. La calidad académica es excelente y el acompañamiento docente superó mis expectativas. Hoy aplico todo lo aprendido en mi empresa."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MC</div>
+                            <div class="author-info">
+                                <h4>María Camila Rodríguez</h4>
+                                <p>Ingeniería de Software</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contacto-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>admisiones@uniempresarial.edu.co</span>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"El programa de Analítica de Datos fue exactamente lo que necesitaba. Las herramientas y conocimientos adquiridos me permitieron ascender en mi carrera profesional en solo 8 meses."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JL</div>
+                            <div class="author-info">
+                                <h4>Juan Luis Méndez</h4>
+                                <p>Especialización en Analítica de Datos</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contacto-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Cra 33a # 30-20 Bogotá, Colombia</span>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Como profesional en activo, la flexibilidad era fundamental. Los contenidos son actuales, prácticos y directamente aplicables. La mejor inversión en mi desarrollo profesional."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div class="author-info">
+                                <h4>Andrea Pérez</h4>
+                                <p>Marketing Digital</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="contacto-form">
-                <!-- Formulario Clientify - Usar el script apropiado según el programa -->
-                <h3>Solicita Información</h3>
-                <p>Completa el formulario y un asesor se contactará contigo</p>
-                <!-- Aquí iría el script de Clientify -->
-                <script type="text/javascript" src="https://api.clientify.net/web-marketing/superforms/script/256076.js"></script>
-            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="fade-in">
+            <h2>Comienza Tu Transformación Profesional</h2>
+            <p>Únete a miles de profesionales que ya están construyendo su futuro</p>
+            <a href="#programs" class="cta-button-secondary">Solicita Información</a>
+        </div>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer section">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer-container">
-            <!-- Columna izquierda -->
             <div class="footer-col">
-                <img src="src/LOGOUE.png" alt="Uniempresarial" class="footer-logo">
-                <p>Fundación Universitaria Empresarial<br><small>Vigilada MinEducación SNIES 2738</small></p>
+                <h3>Universidad Virtual</h3>
+                <p>Formación profesional de excelencia con metodología virtual y tecnología de vanguardia.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
-            
-            <!-- Columna contacto -->
+            <div class="footer-col">
+                <h4>Programas</h4>
+                <ul>
+                    <li><a href="ingsoftware.html">Ingeniería de Software</a></li>
+                    <li><a href="Marketing.html">Marketing Digital</a></li>
+                    <li><a href="administracion.html">Administración de Empresas</a></li>
+                    <li><a href="espAnaliticaDatos.html">Especialización en Analítica de Datos</a></li>
+                </ul>
+            </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
                 <ul>
-                    <li>Cra 33a # 30-20 Bogotá, Colombia</li>
-                    <li>Teléfono: (601) 794 57 18 Ext. 7705 - 7706 - 7707</li>
-                    <li><a href="mailto:admisiones@uniempresarial.edu.co">admisiones@uniempresarial.edu.co</a></li>
+                    <li><i class="fas fa-phone"></i> +57 (1) 234 5678</li>
+                    <li><i class="fas fa-envelope"></i> info@universidadvirtual.edu.co</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
                 </ul>
             </div>
-
-            <!-- Columna redes sociales -->
-            <div class="footer-col">
-                <h4>Síguenos</h4>
-                <div class="social-icons">
-                    <a href="https://es-la.facebook.com/uniempresarial/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.youtube.com/channel/UC7Gal38pmeQ2QxrH0VJwOzg" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/uniempresarial/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/school/uniempresarial/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Universidad Virtual. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Swiper Initialization
+        const swiper = new Swiper('.testimonial-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Fade-in on scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const increment = target / 100;
+            
+            const updateCounter = () => {
+                const current = +counter.innerText;
+                if (current < target) {
+                    counter.innerText = Math.ceil(current + increment);
+                    setTimeout(updateCounter, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    updateCounter();
+                    counterObserver.disconnect();
+                }
+            }, { threshold: 0.5 });
+            
+            counterObserver.observe(counter);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

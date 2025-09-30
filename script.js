@@ -139,6 +139,6 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observar elementos con animación
-document.querySelectorAll('.programa-card, .card').forEach(el => {
+document.querySelectorAll('.programa-card, .card, .benefit-card').forEach(el => {
   observer.observe(el);
 });
