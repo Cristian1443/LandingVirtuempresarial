@@ -1,0 +1,14 @@
+# Forzar index.html como página principal
+DirectoryIndex index.html
+
+# Permitir acceso a todos los archivos en public_html
+<Directory "/home/*/public_html">
+    Options +Indexes
+    AllowOverride All
+    Require all granted
+</Directory>
+
+# Asegurar acceso a archivos estáticos (CSS, JS, imágenes, fuentes, etc.)
+<FilesMatch "\.(html|htm|css|js|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot)$">
+    Require all granted
+</FilesMatch>
