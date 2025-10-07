@@ -74,7 +74,7 @@
     background: #e30613;
     color: #fff;
     padding: 12px 12px;
-    border-radius: 5px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s;
@@ -82,20 +82,18 @@
   .btn-inscripcion{
     background-color: #e30613;
     color: #fff;
-    padding: 15px 25px;
-    border-radius: 5px;
+    padding: 15px 15px;
+    border-radius: 25px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     transition: background 0.3s;
-    display: inline-block;
-    text-align: center;
   }
   .btn-inscribete:hover { 
-    background: #c40010; 
-  }
+    background: #c400107e; }
+
   .btn-inscripcion:hover {
-    background: #003366;
+    will-change: transform, box-shadow;
   }
 
   .btn-movil{
@@ -304,7 +302,7 @@
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
-  }
+    }
 
   .btn {
       padding: 12px 24px;
