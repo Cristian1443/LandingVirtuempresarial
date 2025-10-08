@@ -1051,6 +1051,13 @@ html, body {
       background: #f9fafc !important;
       padding: 80px 20px;
     }
+    .docentes .divider {
+      width: 13%;
+      height: 4px;
+      margin: 20px auto 50px auto;
+      border-radius: 4px;
+      background: linear-gradient(to right, #004aad, #e60023);
+    }
     .docentes h2 {
       font-size: 2.8rem;
       margin-bottom: 10px;
