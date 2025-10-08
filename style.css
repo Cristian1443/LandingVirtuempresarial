@@ -633,11 +633,11 @@ html, body {
       scroll-margin-top: 180px !important;
     }
     .aprendizaje .divider {
-      width: 20%;
-      height: 4px;
-      margin: 20px auto 50px auto;
-      border-radius: 4px;
-      background: linear-gradient(to right, #004aad, #e60023);  
+      width: 160px;
+      height: 5px;
+      margin: 16px auto 40px auto;
+      border-radius: 8px;
+      background: linear-gradient(to right, #ffffff, #e60023);
     }
     p {
       font-size: 1.1rem;
@@ -929,6 +929,74 @@ html, body {
       margin: 0 auto;
       scroll-margin-top: 100px;
     }
+
+/* ===== Sección "Qué aprenderás" con fondo #004aad elegante ===== */
+.aprendizaje {
+  width: 100%;
+  margin: 0;
+  padding: 72px 24px;
+  background: #004aad; /* fondo azul a todo el ancho */
+  color: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+}
+.contenedor.aprendizaje {
+  /* Forzar que la sección no se comporte como contenedor centrado */
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+.aprendizaje h2 { color: #ffffff !important; }
+.aprendizaje p { color: #e6eeff; }
+.aprendizaje .grid-cajas { max-width: 1100px; margin: 0 auto; }
+.aprendizaje .caja {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.28);
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.aprendizaje .caja:hover {
+  background: rgba(255,255,255,0.12);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.20);
+  border-color: rgba(255,255,255,0.70);
+  transform: none;
+}
+.aprendizaje .caja:hover::before { width: 3px; }
+.aprendizaje .caja p { color: #ffffff; }
+.aprendizaje .caja-icon { color: #ffffff; }
+.aprendizaje .caja:hover .caja-icon i { transform: none; color: #ffffff; }
+.aprendizaje .caja:focus-visible { outline: 3px solid rgba(255,255,255,0.7); outline-offset: 2px; }
+.aprendizaje .descripcion {
+  /* overlay elegante, no desplaza contenido */
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .18s ease, transform .18s ease, background .18s ease;
+}
+/* Mostrar descripción como fade-in en hover */
+.aprendizaje .caja:hover .descripcion { opacity: 1; transform: translateY(0); }
+/* Ocultar título e ícono cuando aparece la descripción */
+.aprendizaje .caja > p,
+.aprendizaje .caja .caja-icon { transition: opacity .18s ease; position: relative; z-index: 1; }
+.aprendizaje .caja:hover > p,
+.aprendizaje .caja:hover .caja-icon { opacity: 0; }
+.aprendizaje .caja::before { background: rgba(255,255,255,0.55); }
+
+@media (max-width: 768px) {
+  .aprendizaje { padding: 40px 18px; border-radius: 12px; }
+}
 
     .linea {
       width: 80px;
