@@ -25,12 +25,33 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("navbar-toggle");
   const menu = document.getElementById("navbar-menu");
+  const backdrop = document.getElementById("nav-backdrop");
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    const h = navbar.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--navbar-height', h + 'px');
+    window.addEventListener('resize', () => {
+      const hn = navbar.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--navbar-height', hn + 'px');
+    });
+  }
 
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
       const open = menu.classList.toggle("open");
       // actualizar atributo accesible
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle('nav-open', open);
+      if (backdrop) backdrop.classList.toggle('show', open);
+    });
+    // Cerrar con tecla Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+        if (backdrop) backdrop.classList.remove('show');
+      }
     });
   }
 
@@ -41,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth <= 800 && menu.classList.contains("open")) {
           menu.classList.remove("open");
           if (toggle) toggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove('nav-open');
+          if (backdrop) backdrop.classList.remove('show');
         }
       });
     });
@@ -51,8 +74,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth > 800 && menu && toggle) {
       menu.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove('nav-open');
+      if (backdrop) backdrop.classList.remove('show');
     }
   });
+
+  // Cerrar tocando el backdrop
+  if (backdrop) {
+    backdrop.addEventListener('click', () => {
+      if (menu && toggle) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+        backdrop.classList.remove('show');
+      }
+    });
+  }
 });
 
 //Animación cards ¿Qué aprenderás?

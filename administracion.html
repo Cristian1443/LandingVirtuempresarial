@@ -3,8 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
+        
+        <!-- Preconnect para optimización de fuentes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        
+        <!-- FontAwesome para íconos -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
         <link rel="stylesheet" href="style.css">
-        <title>Administración de Empresas virtual</title>
+        <title>Administración de Empresas Virtual - UNIEMPRESARIAL</title>
         <!-- Google Tag Manager -->
             <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -47,6 +57,9 @@
         </ul>
       </nav>
 
+      <!-- Backdrop para menú móvil -->
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
       <div class="navbar-right">
         <a href="#contacto" class="btn-inscribete">Inscríbete</a>
       </div>
@@ -70,18 +83,18 @@
             <div class="hero-container">
         <!-- Columna izquierda -->
         <div class="hero-info" id="inicio">
-            <h1 class="badge">⚡ Administración de Empresas Virtual</h1> 
+            <h1 class="badge"> Administración de Empresas Virtual</h1> 
             <br>
-                <h1>Aprende, <span style="color: #e30613">Trabaja</span> y Crece</h1>
-                <h1 class="subtitle"> CON UNIEMPRESARIAL </h1>
+                <h1>Aprende, <span style="color: #e30613">Preparate</span> y Crece</h1>
+                <h1 class="subtitle">con UNIEMPRESARIAL</h1>
             <br>
             <p>
                 Estudia desde cualquier lugar con la única universidad respaldada por la 
                 <b>Cámara de Comercio de Bogotá</b> que te forma con el 
                 <span style="color: #e63946; font-weight: bold;">revolucionario Modelo Dual:</span> 
-                estudias y trabajas al mismo tiempo.
+                estudias y te conectas con el mundo laboral al mismo tiempo.
             </p>
-            <img src="src/LogoUeSoft.png" alt="LogoUeSof" class="logoSof">
+            <img src="src/LogoUeSoft.png" alt="LogoUeSof" class="logoSof" loading="lazy">
         </div>
         
         <!-- Columna derecha -->
@@ -100,17 +113,17 @@
             <div class="divider"></div>
                 <div class="cards">
                     <div class="card">
-                        <div class="icon">👥</div>
+                            <div class="card-icon"><i class="fa-regular fa-handshake"></i></div>
                             <h3>Modelo Dual</h3>
                             <p>50% clases + 50% prácticas en empresas aliadas (284 empresas activas).</p>
                     </div>
                     <div class="card">
-                        <div class="icon">🎓</div>
+                            <div class="card-icon"><i class="fa-regular fa-id-badge"></i></div>
                             <h3>Experiencia Laboral Certificada</h3>
                             <p>18 meses de práctica profesional al graduarte.</p>
                     </div>
                     <div class="card">
-                        <div class="icon">🌍</div>
+                            <div class="card-icon"><i class="fa-regular fa-compass"></i></div>
                             <h3>Internacionalización</h3>
                             <p>Convenios de intercambio y doble titulación.</p>
                     </div>
@@ -118,18 +131,18 @@
                 <br><br>
                 <div class="cards">
                     <div class="card">
-                        <div class="icon">💼</div>
-                            <h3>Conexión directa con <spam> empresas</spam></h3>
+                            <div class="card-icon"><i class="fa-regular fa-building"></i></div>
+                            <h3>Conexión directa con empresas</h3>
                             <p>Práctica y proyectos reales desde los primeros semestres.</p>
                             
                     </div>
                     <div class="card">
-                        <div class="icon">🏆</div>
+                            <div class="card-icon"><i class="fa-regular fa-star"></i></div>
                             <h3>Alta Empleabilidad</h3>
                             <p>Más del 87% de egresados con empleo en su campo.</p>
                     </div>
                     <div class="card">
-                        <div class="icon">📚</div>
+                            <div class="card-icon"><i class="fa-regular fa-file-lines"></i></div>
                             <h3>Currículo actualizado</h3>
                             <p>Estrategia, finanzas, marketing digital, analítica y e commerce.</p> 
                     </div>
@@ -138,50 +151,50 @@
                 <a href="#contacto" class="btn-inscripcion btn-movil"> Toma acción ahora</a>
         </section>
         
+      
+        
       <!-- ¿Qué aprenderás? -->
-    <br><br>
-    <span></span>
-      <section class="contenedor aprendizaje">
+      <section class="contenedor aprendizaje" id="aprender">
         <h2 class="elegir">Qué aprenderás estudiando Administración de empresas Virtual</h2>
         <div class="divider"></div>
         <div class="grid-cajas">
           <div class="caja">
-            <span class="icono">💼</span>
+            <div class="caja-icon"><i class="fa-regular fa-lightbulb"></i></div>
             <p>Estrategia y liderazgo</p>
             <div class="descripcion">
               Planeación, toma de decisiones y negociación.
             </div>
           </div>
           <div class="caja">
-            <span class="icono">📊</span>
+            <div class="caja-icon"><i class="fa-regular fa-chart-bar"></i></div>
             <p>Finanzas y contabilidad gerencial</p>
             <div class="descripcion">
               Flujo de caja, evaluación de proyectos, KPIs.
             </div>
           </div>
           <div class="caja">
-            <span class="icono">🛒</span>
+            <div class="caja-icon"><i class="fa-regular fa-credit-card"></i></div>
               <p>Mercadeo y e commerce</p>
             <div class="descripcion">
               Marketing digital, CRM, funnel y growth.
             </div>
           </div>
           <div class="caja">
-            <span class="icono">⚙️</span>
+            <div class="caja-icon"><i class="fa-solid fa-gears"></i></div>
             <p>Operaciones y supply</p>
             <div class="descripcion">
               Procesos, calidad, logística, transformación digital.
             </div>
           </div>
           <div class="caja">
-            <span class="icono">📈</span>
+            <div class="caja-icon"><i class="fa-solid fa-chart-line"></i></div>
             <p>Analítica de negocios</p>
             <div class="descripcion">
               BI, dashboards, data para decisiones.
           </div>
           </div>
           <div class="caja">
-            <span class="icono">🚀</span>
+            <div class="caja-icon"><i class="fa-regular fa-paper-plane"></i></div>
             <p>Emprendimiento</p>
             <div class="descripcion">
               Modelo de negocio, validación y lanzamiento.
@@ -189,7 +202,10 @@
           </div>
         </div>
       </section>
-      <br><br><br>
+      
+      <!-- Separador profesional -->
+      <div class="section-separator"></div>
+      
       <section class="plan-estudios">
       <h2 class="elegir">Plan de estudios de Administración de empresas virtual</h2>
         <div class="divider"></div>
@@ -331,6 +347,8 @@
       <br>
         <a id="#contacto" class="btn-inscripcion btn-movil"> Empieza tu camino</a>
     </section>
+    
+    
         
     <!-- Sección: Nuestros Docentes -->
       <section class="section docentes" id="docentes">
@@ -339,17 +357,17 @@
         <div class="divider"></div>
         <div class="docente-cards">
           <div class="docente">
-            <div class="foto"> <img src="src/Administracion/AlexanderMarquezRios.png" alt="Foto de docente Alexander Marquez Rios"></div>
+            <div class="foto"> <img src="src/Administracion/AlexanderMarquezRios.png" alt="Foto de docente Alexander Marquez Rios" loading="lazy"></div>
             <h3 style="color: #004aad;">Alexander Márquez Rios</h3>
             <p style="text-align: justify;">Soy psicólogo de la Universidad Javeriana, con Especialización en Administración de Empresas de la Universidad del Rosario, y Especialista y Magíster en Psicología del Consumidor en la Universidad Konrad Lorenz. Cuento con más de 25 años de experiencia empresarial en áreas de Gerencia de Talento Humano y Dirección Ejecutiva Nacional. Oriento, entre otras, las asignaturas de Gestión del Talento Humano, Gestión de la Compensación y Gestión de la Cultura Empresarial.</p>
           </div>
           <div class="docente">
-            <div class="foto"><img src="src/Administracion/LauraXimenaGuatavita.png" alt="Foto de docente Laura Ximena Guatavita"></div>
+            <div class="foto"><img src="src/Administracion/LauraXimenaGuatavita.png" alt="Foto de docente Laura Ximena Guatavita" loading="lazy"></div>
             <h3 style="color: #004aad;">Laura Ximena Guatavita</h3>
             <p style="text-align: justify;">Soy profesional en Administración Turística y Hotelera, con Maestría en Gerencia Estratégica de Mercados y aspirante a Doctorado en Turismo. Con más de 10 años de experiencia en el ámbito empresarial y la docencia, integro teoría y práctica en gestión, marketing e innovación para el desarrollo de futuros profesionales.</p>
           </div>
           <div class="docente">
-            <div class="foto"> <img src="src/Administracion/JuanCarlosRodriguez.png" alt="Foto de docente Juan Carlos Rodríguez"> </div>
+            <div class="foto"> <img src="src/Administracion/JuanCarlosRodriguez.png" alt="Foto de docente Juan Carlos Rodríguez" loading="lazy"> </div>
             <h3 style="color: #004aad;">Juan Carlos Rdríguez</h3>
             <p style="text-align: justify;">Soy Máster en Investigación de Mercados y Análisis de Clientes por EAE Business School, con 30 años de experiencia en el ámbito empresarial. Mi trayectoria me ha permitido aportar una visión práctica y estratégica en la docencia, donde imparto asignaturas como Marketing Digital, Marketing Internacional y Comportamiento del Consumidor. </p>
           </div>
@@ -364,27 +382,27 @@
         <div class="divider"></div>
         <div class="grid-cajas">
           <div class="caja">
-            <span class="icono">📂</span>
+            <div class="caja-icon"><i class="fa-regular fa-folder-open"></i></div>
             <p>Gerente de proyectos</p>
           </div>
           <div class="caja">
-            <span class="icono">🧾</span>
+            <div class="caja-icon"><i class="fa-regular fa-clipboard"></i></div>
             <p>Consultor empresarial</p>
           </div>
           <div class="caja">
-            <span class="icono">📣</span>
+            <div class="caja-icon"><i class="fa-solid fa-bullhorn"></i></div>
             <p>Especialista en marketing digital</p>
           </div>
           <div class="caja">
-            <span class="icono">🤝</span>
+            <div class="caja-icon"><i class="fa-regular fa-handshake"></i></div>
             <p>Ejecutivo Comercial</p>
           </div>
           <div class="caja">
-            <span class="icono">💰</span>
+            <div class="caja-icon"><i class="fa-solid fa-dollar-sign"></i></div>
             <p>Analista Financiero</p>
           </div>
           <div class="caja">
-            <span class="icono">👥</span>
+            <div class="caja-icon"><i class="fa-regular fa-circle-user"></i></div>
             <p>Fundador/a de Startups o PYMES</p>
           </div>
         </div>
@@ -458,12 +476,12 @@
 
       <!-- Logos de empresas -->
       <div class="empresas-grid">
-        <div class="empresa-card"><img src="src/Administracion/Previsora.png" alt="Empresa Previsora"></div>
-        <div class="empresa-card"><img src="src/Administracion/Genval.webp" alt="Empresa Genval"></div>
-        <div class="empresa-card"><img src="src/Administracion/MabIngenieriadeValor.png" alt="Empresa Ingeniería de valor"></div>
-        <div class="empresa-card"><img src="src/Administracion/Brandstrat.png" alt="Empresa Brandstrad"></div>
-        <div class="empresa-card"><img src="src/Administracion/Wurth.png" alt="Empresa Wurth"></div>
-        <div class="empresa-card"><img src="src/Administracion/RLASAV.png" alt="Empresa RLASAV"></div>
+        <div class="empresa-card"><img src="src/Administracion/Previsora.png" alt="Empresa Previsora" loading="lazy"></div>
+        <div class="empresa-card"><img src="src/Administracion/Genval.webp" alt="Empresa Genval" loading="lazy"></div>
+        <div class="empresa-card"><img src="src/Administracion/MabIngenieriadeValor.png" alt="Empresa Ingeniería de valor" loading="lazy"></div>
+        <div class="empresa-card"><img src="src/Administracion/Brandstrat.png" alt="Empresa Brandstrad" loading="lazy"></div>
+        <div class="empresa-card"><img src="src/Administracion/Wurth.png" alt="Empresa Wurth" loading="lazy"></div>
+        <div class="empresa-card"><img src="src/Administracion/RLASAV.png" alt="Empresa RLASAV" loading="lazy"></div>
       </div>
 
       <!-- Frase -->
@@ -506,7 +524,7 @@
       </section>
     <!--FINAL-->
     <section class="section-futuro">
-      <div class="emoji">🚀</div>
+      
       <h3 class="future">No pospongas tu futuro</h3>
       <p style="color: #fff;">Inscripciones abiertas 2025-2</p>
       
@@ -514,15 +532,14 @@
         <a href="#contacto" class="btn-inscripcion"> Inscríbete ya</a>
       </div>
     </section>
-    <script href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     </body>
     <footer class="footer section">
       <div class="footer-container">
         
         <!-- Columna izquierda -->
         <div class="footer-col">
-          <img src="src/LOGOUE.png" alt="Uniempresarial" class="footer-logo">
+          <img src="src/LOGOUE.png" alt="Uniempresarial" class="footer-logo" loading="lazy">
           <p>Fundación Universitaria Empresarial<br><small>Vigilada MinEducación SNIES 2738</small></p>
         </div>
         <!-- Columna contacto -->
